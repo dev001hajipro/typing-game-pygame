@@ -10,6 +10,6 @@
 - タイマー機能あり
 - スコア機能あり
 
-![タイトル画面](demo1.png)
+![タイトル画面](demo_image/demo1.png)
 
-![ゲーム画面](demo2.png)
+![ゲーム画面](demo_image/demo2.png)
