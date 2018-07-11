@@ -3,6 +3,7 @@
 タイピングゲーム
 """
 
+import csv
 import random
 import sys
 from enum import Enum
@@ -200,8 +201,15 @@ class Utility():
         return self.font24.render(msg, True, pygame.Color("black"))
 
 
-def main(words: list):
+def main():
     """ゲーム起動"""
+
+    # 単語CSV読み込み
+    words = []
+    with open("words.csv") as csvfile:
+        reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
+        for row in reader:
+            words.append(row[0])
 
     util = Utility()
     screen = pygame.display.set_mode((720, 480))
@@ -220,24 +228,4 @@ def main(words: list):
 
 
 if __name__ == '__main__':
-
-    WORDS = [
-        'apple',
-        'banana',
-        'cherry',
-        'grape',
-        'kiwi',
-        'lime',
-        'lemon',
-        'mandarin',
-        'melon',
-        'orange',
-        'pear',
-        'persimmon',
-        'plum',
-        'strawberry',
-        'vine',
-        'watermelon'
-    ]
-
-    main(WORDS)
+    main()
